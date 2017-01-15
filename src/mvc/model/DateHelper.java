@@ -1,4 +1,4 @@
-package sample;
+package mvc.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

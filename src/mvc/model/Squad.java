@@ -1,7 +1,6 @@
-package sample;
+package mvc.model;
 
 import java.util.ArrayList;
-
 
 /**
  * Created by pc on 11.12.2016.

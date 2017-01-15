@@ -1,6 +1,4 @@
-package sample;
-
-import javafx.scene.control.TextField;
+package mvc.model;
 
 /**
  * Created by pc on 11.12.2016.

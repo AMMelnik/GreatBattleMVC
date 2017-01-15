@@ -1,4 +1,4 @@
-package sample;
+package mvc.model;
 
 /**
  * Created by pc on 15.12.2016.

@@ -3,7 +3,7 @@ package mvc.model;
 /**
  * Created by pc on 11.12.2016.
  */
-class Battle {
+public class Battle {
 
     private Squad squad1 = new Squad();
     private Squad squad2 = new Squad();
@@ -12,7 +12,7 @@ class Battle {
     private Warrior warrior1 = null;
     private Warrior warrior2 = null;
 
-    void createSquads(String name1, String name2) {
+    public void createSquads(String name1, String name2) {
         squad1.setSquadName(name1);
         squad2.setSquadName(name2);
     }

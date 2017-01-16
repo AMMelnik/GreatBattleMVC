@@ -5,12 +5,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import mvc.Main;
+import mvc.model.Battle;
 
 /**
  * Created by pc on 16.01.2017.
  */
-public class WarriorsViewController {
+public class WarriorsViewController extends ViewController {
 
     @FXML
     private Label savedFirstSquadName;
@@ -35,24 +35,30 @@ public class WarriorsViewController {
     @FXML
     private Button goBattle;
 
-    private Main main;
-
     public WarriorsViewController() {
+        super();
     }
 
     @FXML
-    private void initialize() {
-        // Инициализация таблицы адресатов с двумя столбцами.
+    void initialize() {
+        savedFirstSquadName.setText("");
         warriorNameInFirstSquad.setText("Victor");
         warriorNameInSecondSquad.setText("Bill");
     }
 
-    public void setMain(Main main) {
-        this.main = main;
+    @FXML
+    private void clickGoBattleButton() {
+        super.getMain().showBattleWindow();
     }
 
     @FXML
-    private void clickGoBattleButton() {
-        main.showBattleWindow();
+    private void clickAddFirstButton() {
+
     }
+
+    @FXML
+    private void clickAddSecondButton() {
+
+    }
+
 }

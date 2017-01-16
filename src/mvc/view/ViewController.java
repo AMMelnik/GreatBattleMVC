@@ -14,6 +14,14 @@ public abstract class ViewController {
     public ViewController() {
     }
 
+    public void setBattle(Battle battle) {
+        this.battle = battle;
+    }
+
+    Battle getBattle() {
+        return battle;
+    }
+
     public void setMain(Main main) {
         this.main = main;
     }

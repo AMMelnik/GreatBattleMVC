@@ -17,6 +17,14 @@ public class Battle {
         squad2.setSquadName(name2);
     }
 
+    public String getFirstSquadName() {
+        return squad1.getSquadName();
+    }
+
+    public String getSecondSquadName() {
+        return squad2.getSquadName();
+    }
+
     void addWarriorToSquad1(String name, int type) {
         squad1.addToSquad(name, type);
     }

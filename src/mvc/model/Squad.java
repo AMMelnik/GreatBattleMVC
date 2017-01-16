@@ -14,6 +14,10 @@ class Squad {
         squadName = name;
     }
 
+    String getSquadName() {
+        return squadName;
+    }
+
     // добавление бойцов в отряд
     void addToSquad(String name, int type) {
         switch (type) {

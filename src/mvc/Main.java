@@ -47,6 +47,7 @@ public class Main extends Application {
             AnchorPane window = loader.load();
             rootLayout.setCenter(window);
             ViewController controller = loader.getController();
+            controller.setBattle(battle);
             controller.setMain(this);
         } catch (IOException e) {
             e.printStackTrace();

@@ -35,13 +35,21 @@ public class WarriorsViewController extends ViewController {
     @FXML
     private Button goBattle;
 
+    private Battle battle;
+
     public WarriorsViewController() {
         super();
     }
 
+    @Override
+    public void setBattle(Battle battle) {
+        this.battle = battle;
+    }
+
     @FXML
     void initialize() {
-        savedFirstSquadName.setText("");
+        savedFirstSquadName.setText(battle.getFirstSquadName());
+        savedSecondSquadName.setText(battle.getSecondSquadName());
         warriorNameInFirstSquad.setText("Victor");
         warriorNameInSecondSquad.setText("Bill");
     }

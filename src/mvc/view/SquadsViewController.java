@@ -33,11 +33,10 @@ public class SquadsViewController extends ViewController {
 
     @FXML
     private void clickNextButton() {
-        Battle battle = new Battle();
         String firstName = firstSquadName.getText();
         String secondName = secondSquadName.getText();
         if (!firstName.equals("") && !secondName.equals("")) {
-            battle.createSquads(firstName, secondName);
+            super.getBattle().createSquads(firstName, secondName);
             super.getMain().showWarriorsWindow();
         } else squadInfo.setText("Необходимо сначала задать имена обоим отрядам!");
     }

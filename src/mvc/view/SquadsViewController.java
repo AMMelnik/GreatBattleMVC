@@ -36,7 +36,7 @@ public class SquadsViewController extends ViewController {
         String firstName = firstSquadName.getText();
         String secondName = secondSquadName.getText();
         if (!firstName.equals("") && !secondName.equals("")) {
-            super.getBattle().createSquads(firstName, secondName);
+            Battle.getInstance().createSquads(firstName, secondName);
             super.getMain().showWarriorsWindow();
         } else squadInfo.setText("Необходимо сначала задать имена обоим отрядам!");
     }

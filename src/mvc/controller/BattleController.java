@@ -1,9 +1,8 @@
 package mvc.controller;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.TextField;
-
+import javafx.scene.control.TextArea;
+import mvc.model.Battle;
 
 /**
  * Created by pc on 16.01.2017.
@@ -11,15 +10,14 @@ import javafx.scene.control.TextField;
 public class BattleController extends ObjController {
 
     @FXML
-    TextField battleInfoText;
+    TextArea battleInfoText;
 
     public BattleController() {
-
+        super();
     }
 
     @FXML
     void initialize() {
-        battleInfoText.setText("Да свершится Великая Битва!");
-        battleInfoText.setAlignment(Pos.TOP_CENTER);
+        battleInfoText.setText(Battle.getInstance().showBattleInfo());
     }
 }

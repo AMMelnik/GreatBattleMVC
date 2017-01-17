@@ -22,13 +22,13 @@ class Squad {
     void addToSquad(String name, int type) {
         switch (type) {
             case 0:
-                squad.add(new Scout(name, 80, 60));
+                squad.add(new Scout(name, "Разведчик", 80, 60));
                 break;
             case 1:
-                squad.add(new Fighter(name, 50, 150));
+                squad.add(new Fighter(name, "Борец", 50, 150));
                 break;
             case 2:
-                squad.add(new Bomber(name, 100, 50));
+                squad.add(new Bomber(name, "Подрывник", 100, 50));
                 break;
         }
     }
@@ -59,6 +59,10 @@ class Squad {
 
     @Override
     public String toString() {
-        return squadName;
+        String warriors = "Состав отряда:\n";
+        for (int i = 0; i < squad.size(); i++){
+            warriors += squad.get(i).toString() + "\n";
+        }
+        return warriors;
     }
 }

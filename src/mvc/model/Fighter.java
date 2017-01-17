@@ -5,15 +5,18 @@ package mvc.model;
  */
 class Fighter extends ModernWarrior {
 
-    private String someWarriorInfo = ". Класс Борец, Отряд ";
+    Fighter(String warriorName, String classType, int warriorDamage, int warriorHealth) {
+        super(warriorName, classType, warriorDamage, warriorHealth);
+    }
 
-    Fighter(String warriorName, int warriorDamage, int warriorHealth) {
-        super(warriorName, warriorDamage, warriorHealth);
+    @Override
+    public String getClassType() {
+        return " Класс Борец";
     }
 
     @Override
     public String toString() {
-        return super.getNameOnly() + someWarriorInfo + super.getSquadName() + "\n";
+        return super.getNameOnly() + "." + getClassType();
     }
 
     @Override

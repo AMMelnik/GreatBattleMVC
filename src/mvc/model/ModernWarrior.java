@@ -9,9 +9,11 @@ abstract class ModernWarrior implements Warrior {
     private int health;
     private String name;
     private String squadName;
+    private String classType;
 
-    ModernWarrior(String warriorName, int warriorDamage, int warriorHealth) {
+    ModernWarrior(String warriorName, String classType, int warriorDamage, int warriorHealth) {
         name = warriorName;
+        this.classType = classType;
         damage = warriorDamage;
         health = warriorHealth;
     }
@@ -45,6 +47,8 @@ abstract class ModernWarrior implements Warrior {
     public String getSquadName() {
         return squadName;
     }
+
+    public abstract String getClassType();
 
     @Override
     public String getNameOnly() {

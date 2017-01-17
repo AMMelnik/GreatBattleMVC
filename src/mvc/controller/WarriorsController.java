@@ -1,10 +1,9 @@
 package mvc.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import mvc.model.Battle;
 
 /**
@@ -21,24 +20,23 @@ public class WarriorsController extends ObjController {
     @FXML
     private TextField warriorNameInSecondSquad;
     @FXML
-    private ComboBox warriorClassInFirstSqaud;
+    private ComboBox warriorClassInFirstSquad;
     @FXML
-    private ComboBox warriorClassInSecondSqaud;
-    @FXML
-    private Button addToFirstSquad;
-    @FXML
-    private Button addnToSecondSquad;
+    private ComboBox warriorClassInSecondSquad;
     @FXML
     private Label warriorInFirstSquadInfo;
     @FXML
     private Label warriorInSecondSquadInfo;
     @FXML
-    private Button goBattle;
+    TextArea firstSquadWarriors;
+    @FXML
+    TextArea secondSquadWarriors;
+
+    private ObservableList<String> classes = FXCollections.observableArrayList("Разведчик", "Борец", "Подрывник");
 
     public WarriorsController() {
         super();
     }
-
 
     @FXML
     void initialize() {
@@ -46,21 +44,47 @@ public class WarriorsController extends ObjController {
         savedSecondSquadName.setText(Battle.getInstance().getSecondSquadName());
         warriorNameInFirstSquad.setText("Victor");
         warriorNameInSecondSquad.setText("Bill");
+        warriorClassInFirstSquad.setItems(classes);
+        warriorClassInSecondSquad.setItems(classes);
+        warriorClassInFirstSquad.setValue(classes.get(0));
+        warriorClassInSecondSquad.setValue(classes.get(2));
     }
 
     @FXML
     private void clickGoBattleButton() {
+        Battle.getInstance().startBattle();
         super.getMain().showBattleWindow();
     }
 
     @FXML
     private void clickAddFirstButton() {
-
+        warriorInFirstSquadInfo.setText("");
+        String firstName = warriorNameInFirstSquad.getText();
+        if (!firstName.equals("")) {
+            Battle.getInstance().addWarriorToSquad1(firstName, getWarClassName(1));
+            firstSquadWarriors.setText(Battle.getInstance().showSquad(1));
+        } else {
+            warriorInFirstSquadInfo.setText("Укажите имя бойца!");
+        }
     }
 
     @FXML
     private void clickAddSecondButton() {
-
+        warriorInSecondSquadInfo.setText("");
+        String secondName = warriorNameInSecondSquad.getText();
+        if (!secondName.equals("")) {
+            Battle.getInstance().addWarriorToSquad2(secondName, getWarClassName(2));
+            secondSquadWarriors.setText(Battle.getInstance().showSquad(2));
+        } else {
+            warriorInSecondSquadInfo.setText("Укажите имя бойца!");
+        }
     }
 
+    private int getWarClassName(int squad) {
+        if (squad == 1) {
+            return warriorClassInFirstSquad.getSelectionModel().getSelectedIndex();
+        } else {
+            return warriorClassInSecondSquad.getSelectionModel().getSelectedIndex();
+        }
+    }
 }

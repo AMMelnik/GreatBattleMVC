@@ -8,8 +8,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.controller.SquadsController">
    <children>
-      <TextField fx:id="firstSquadName" layoutX="103.0" layoutY="13.0" prefHeight="30.0" prefWidth="180.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="10.0" />
-      <TextField fx:id="secondSquadName" layoutX="169.0" layoutY="51.0" prefHeight="30.0" prefWidth="180.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="50.0" />
+      <TextField fx:id="firstSquadName" layoutX="103.0" layoutY="13.0" prefHeight="30.0" prefWidth="180.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="secondSquadName" layoutX="169.0" layoutY="51.0" prefHeight="30.0" prefWidth="180.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="50.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
       <Label layoutX="63.0" layoutY="9.0" prefHeight="30.0" prefWidth="100.0" text="Первый отряд" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font name="System Bold" size="14.0" />

@@ -5,15 +5,18 @@ package mvc.model;
  */
 class Scout extends ModernWarrior {
 
-    private String someWarriorInfo = ". Класс Разведчик, Отряд ";
+    Scout(String warriorName, String classType, int warriorDamage, int warriorHealth) {
+        super(warriorName, classType, warriorDamage, warriorHealth);
+    }
 
-    Scout(String warriorName, int warriorDamage, int warriorHealth) {
-        super(warriorName, warriorDamage, warriorHealth);
+    @Override
+    public String getClassType() {
+        return " Класс Разведчик";
     }
 
     @Override
     public String toString() {
-        return super.getNameOnly() + someWarriorInfo + super.getSquadName() + "\n";
+        return super.getNameOnly() + "." + getClassType();
     }
 
     @Override

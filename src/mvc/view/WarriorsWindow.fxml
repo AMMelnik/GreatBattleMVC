@@ -4,8 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -36,12 +35,12 @@
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
-                  <TextField fx:id="warriorNameInFirstSquad" layoutX="121.0" layoutY="10.0" prefHeight="30.0" prefWidth="160.0" text="Jonh" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0">
+                  <TextField fx:id="warriorNameInFirstSquad" layoutX="121.0" layoutY="10.0" prefHeight="30.0" prefWidth="160.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0">
                      <font>
-                        <Font name="System Bold" size="12.0" />
+                        <Font size="14.0" />
                      </font></TextField>
-                  <ComboBox fx:id="warriorClassInFirstSqaud" layoutX="121.0" layoutY="58.0" prefHeight="30.0" prefWidth="160.0" promptText="Bomber" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="50.0" />
-                  <Button fx:id="addToFirstSquad" layoutX="209.0" layoutY="112.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="100.0">
+                  <ComboBox fx:id="warriorClassInFirstSquad" layoutX="121.0" layoutY="58.0" prefHeight="30.0" prefWidth="160.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="50.0" />
+                  <Button fx:id="addToFirstSquad" layoutX="209.0" layoutY="112.0" mnemonicParsing="false" onAction="#clickAddFirstButton" prefHeight="30.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="100.0">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -58,12 +57,12 @@
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
-                  <ComboBox fx:id="warriorClassInSecondSqaud" layoutX="110.0" layoutY="67.0" prefHeight="30.0" prefWidth="160.0" promptText="Fighter" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="50.0" />
-                  <TextField fx:id="warriorNameInSecondSquad" layoutX="111.0" layoutY="18.0" prefHeight="30.0" prefWidth="160.0" text="James" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0">
+                  <ComboBox fx:id="warriorClassInSecondSquad" layoutX="110.0" layoutY="67.0" prefHeight="30.0" prefWidth="160.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="50.0" />
+                  <TextField fx:id="warriorNameInSecondSquad" layoutX="111.0" layoutY="18.0" prefHeight="30.0" prefWidth="160.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="10.0">
                      <font>
-                        <Font name="System Bold" size="12.0" />
+                        <Font size="14.0" />
                      </font></TextField>
-                  <Button fx:id="addnToSecondSquad" layoutX="208.0" layoutY="119.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="100.0">
+                  <Button fx:id="addToSecondSquad" layoutX="208.0" layoutY="119.0" mnemonicParsing="false" onAction="#clickAddSecondButton" prefHeight="30.0" prefWidth="100.0" text="Добавить" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="100.0">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
@@ -76,22 +75,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="291.0">
                <children>
-                  <TableView layoutY="-1.0" prefHeight="198.0" prefWidth="291.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn editable="false" prefWidth="146.0" text="Класс" />
-                      <TableColumn editable="false" prefWidth="144.0" text="Имя" />
-                    </columns>
-                  </TableView>
+                  <TextArea fx:id="firstSquadWarriors" layoutX="46.0" layoutY="-1.0" prefHeight="198.0" prefWidth="291.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView prefHeight="198.0" prefWidth="291.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn editable="false" prefWidth="145.0" text="Класс" />
-                      <TableColumn editable="false" minWidth="4.0" prefWidth="145.0" text="Имя" />
-                    </columns>
-                  </TableView>
+                  <TextArea fx:id="secondSquadWarriors" layoutY="-1.0" prefHeight="198.0" prefWidth="291.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
         </items>

@@ -13,9 +13,8 @@ public class Battle {
     private Warrior warrior2 = null;
 
     private static volatile Battle instance = new Battle();
-    // private constructor
-    private Battle() {
 
+    private Battle() {
     }
 
     public static Battle getInstance() {
@@ -35,15 +34,15 @@ public class Battle {
         return squad2.getSquadName();
     }
 
-    void addWarriorToSquad1(String name, int type) {
+    public void addWarriorToSquad1(String name, int type) {
         squad1.addToSquad(name, type);
     }
 
-    void addWarriorToSquad2(String name, int type) {
+    public void addWarriorToSquad2(String name, int type) {
         squad2.addToSquad(name, type);
     }
 
-    void startBattle() {
+    public void startBattle() {
         squad1.setSquadNameForWarriors();
         squad2.setSquadNameForWarriors();
         DateHelper dateHelper = new DateHelper();
@@ -80,8 +79,8 @@ public class Battle {
 
     private boolean showResults(Squad attacksSquad, Squad attackedSquad) {
         if (!attackedSquad.hasAliveWarriors()) {
-            String squadDown = "Отряд " + attackedSquad.toString() +
-                    " полностью разбит!!!\nПобеду одержал отряд " + attacksSquad.toString() + " ! УРА!!!\n";
+            String squadDown = "Отряд " + attackedSquad.getSquadName() +
+                    " полностью разбит!!!\nПобеду одержал отряд " + attacksSquad.getSquadName() + " ! УРА!!!\n";
             prepareToShowBattleInfo(squadDown);
             return isBattleEnd = true;
         }
@@ -92,12 +91,19 @@ public class Battle {
         battleInfo.append(newInfo);
     }
 
-    String showBattleInfo() {
+    public String showBattleInfo() {
         return battleInfo.toString();
     }
 
+    public String showSquad(int squad) {
+        if (squad == 1) {
+            return squad1.toString();
+        } else return squad2.toString();
+    }
+
     private String showRoundAd(Warrior attacksWarrior, Warrior attackedWarrior) {
-        return "\n       На бой вызываются: \n" + attacksWarrior.toString() + "и " + attackedWarrior.toString() +
+        return "\n  =*=*=*=*=*=*=*=*=*=*=*=*=*=*=\n       На бой вызываются: \n" + attacksWarrior.toString() + ", " +
+                attacksWarrior.getSquadName() + "\nи " + attackedWarrior.toString() + ", " + attackedWarrior.getSquadName() +
                 "\nАтакует боец " + attacksWarrior.getNameOnly() + "\nБоец " + attackedWarrior.getNameOnly() + "  принимает удар!\n";
     }
 }

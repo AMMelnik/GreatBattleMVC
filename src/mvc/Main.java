@@ -25,11 +25,9 @@ public class Main extends Application {
 
     private void initRootLayout() {
         try {
-            // Загружаем корневой макет из fxml файла.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
             rootLayout = loader.load();
-            // Отображаем сцену, содержащую корневой макет.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -57,10 +55,6 @@ public class Main extends Application {
 
     public void showBattleWindow() {
         prepareToShow("view/BattleWindow.fxml");
-    }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
     }
 
     public static void main(String[] args) {

@@ -17,8 +17,6 @@ public class SquadsController extends ObjController {
     private TextField secondSquadName;
     @FXML
     private Label squadInfo;
-    @FXML
-    private Button next;
 
     public SquadsController() {
         super();
@@ -35,9 +33,12 @@ public class SquadsController extends ObjController {
     private void clickNextButton() {
         String firstName = firstSquadName.getText();
         String secondName = secondSquadName.getText();
-        if (!firstName.equals("") && !secondName.equals("")) {
+        if (firstName.equals("") && secondName.equals("")) {
+            squadInfo.setText("Необходимо сначала задать имена обоим отрядам!");
+        } else {
             Battle.getInstance().createSquads(firstName, secondName);
             super.getMain().showWarriorsWindow();
-        } else squadInfo.setText("Необходимо сначала задать имена обоим отрядам!");
+        }
+
     }
 }

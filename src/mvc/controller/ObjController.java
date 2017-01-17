@@ -1,23 +1,22 @@
-package mvc.view;
+package mvc.controller;
 
 import mvc.Main;
-import mvc.model.Battle;
 
 /**
  * Created by pc on 16.01.2017.
  */
-public abstract class ViewController {
+public abstract class ObjController {
 
     private Main main;
 
-    public ViewController() {
+    public ObjController() {
     }
 
     public void setMain(Main main) {
         this.main = main;
     }
 
-    Main getMain() {
+    public Main getMain() {
         return main;
     }
 

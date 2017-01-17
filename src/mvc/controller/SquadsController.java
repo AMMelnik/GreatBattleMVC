@@ -1,4 +1,4 @@
-package mvc.view;
+package mvc.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +9,7 @@ import mvc.model.Battle;
 /**
  * Created by pc on 15.01.2017.
  */
-public class SquadsViewController extends ViewController {
+public class SquadsController extends ObjController {
 
     @FXML
     private TextField firstSquadName;
@@ -20,7 +20,7 @@ public class SquadsViewController extends ViewController {
     @FXML
     private Button next;
 
-    public SquadsViewController() {
+    public SquadsController() {
         super();
     }
 

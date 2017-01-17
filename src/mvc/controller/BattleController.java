@@ -1,20 +1,19 @@
-package mvc.view;
+package mvc.controller;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
-import mvc.model.Battle;
 
 
 /**
  * Created by pc on 16.01.2017.
  */
-public class BattleViewController extends ViewController {
+public class BattleController extends ObjController {
 
     @FXML
     TextField battleInfoText;
 
-    public BattleViewController() {
+    public BattleController() {
 
     }
 

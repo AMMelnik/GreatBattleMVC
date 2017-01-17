@@ -1,4 +1,4 @@
-package mvc.view;
+package mvc.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,7 +10,7 @@ import mvc.model.Battle;
 /**
  * Created by pc on 16.01.2017.
  */
-public class WarriorsViewController extends ViewController {
+public class WarriorsController extends ObjController {
 
     @FXML
     private Label savedFirstSquadName;
@@ -35,7 +35,7 @@ public class WarriorsViewController extends ViewController {
     @FXML
     private Button goBattle;
 
-    public WarriorsViewController() {
+    public WarriorsController() {
         super();
     }
 

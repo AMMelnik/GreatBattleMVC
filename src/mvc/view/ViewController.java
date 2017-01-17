@@ -9,17 +9,8 @@ import mvc.model.Battle;
 public abstract class ViewController {
 
     private Main main;
-    private Battle battle;
 
     public ViewController() {
-    }
-
-    public void setBattle(Battle battle) {
-        this.battle = battle;
-    }
-
-    Battle getBattle() {
-        return battle;
     }
 
     public void setMain(Main main) {

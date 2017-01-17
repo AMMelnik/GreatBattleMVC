@@ -1,7 +1,5 @@
 package mvc;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,11 +9,13 @@ import javafx.stage.Stage;
 import mvc.model.Battle;
 import mvc.view.ViewController;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
-    Battle battle = new Battle();
+
 
     @Override
     public void start(Stage primaryStage) {
@@ -47,7 +47,6 @@ public class Main extends Application {
             AnchorPane window = loader.load();
             rootLayout.setCenter(window);
             ViewController controller = loader.getController();
-            controller.setBattle(battle);
             controller.setMain(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,6 +66,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
     }
+
 }

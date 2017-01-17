@@ -12,6 +12,16 @@ public class Battle {
     private Warrior warrior1 = null;
     private Warrior warrior2 = null;
 
+    private static volatile Battle instance = new Battle();
+    // private constructor
+    private Battle() {
+
+    }
+
+    public static Battle getInstance() {
+        return instance;
+    }
+
     public void createSquads(String name1, String name2) {
         squad1.setSquadName(name1);
         squad2.setSquadName(name2);

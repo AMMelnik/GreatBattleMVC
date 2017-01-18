@@ -16,7 +16,7 @@ class Bomber extends ModernWarrior {
 
     @Override
     public String toString() {
-        return super.getNameOnly() + "." + getClassType();
+        return super.getNameOnly() + "." + getClassType(); //метод одинаковый у всех бойцов - вынести в ModernWarrior
     }
 
     @Override

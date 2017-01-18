@@ -18,6 +18,6 @@ public class BattleController extends ObjController {
 
     @FXML
     void initialize() {
-        battleInfoText.setText(Battle.getInstance().showBattleInfo());
+        battleInfoText.setText(Battle.getInstance().showBattleInfo()); //модель должна оповещать представление об изменении!
     }
 }

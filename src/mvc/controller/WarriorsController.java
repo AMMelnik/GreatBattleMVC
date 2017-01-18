@@ -62,7 +62,9 @@ public class WarriorsController extends ObjController {
         String firstName = warriorNameInFirstSquad.getText();
         if (!firstName.equals("")) {
             Battle.getInstance().addWarriorToSquad1(firstName, getWarClassName(1));
-            firstSquadWarriors.setText(Battle.getInstance().showSquad(1));
+            firstSquadWarriors.setText(Battle.getInstance().showSquad(1));//модель должна оповещать представление об изменении!
+            //в данном случае добавление бойца в отряд происходит быстро, но мы могли бы добавить, например, запись на удаленный сервер, добавление не успевало бы завершиться
+            //до вызова setText и представление бы ничего не узнало о новом бойце.
         } else {
             warriorInFirstSquadInfo.setText("Укажите имя бойца!");
         }

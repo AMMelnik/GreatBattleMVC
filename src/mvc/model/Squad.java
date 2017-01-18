@@ -19,7 +19,7 @@ class Squad {
     }
 
     // добавление бойцов в отряд
-    void addToSquad(String name, int type) {
+    void addToSquad(String name, int type) { //отряд не должен заниматься созданием бойцов. нужна фабрика
         switch (type) {
             case 0:
                 squad.add(new Scout(name, "Разведчик", 80, 60));
@@ -61,7 +61,7 @@ class Squad {
     public String toString() {
         String warriors = "Состав отряда:\n";
         for (int i = 0; i < squad.size(); i++){
-            warriors += squad.get(i).toString() + "\n";
+            warriors += squad.get(i).toString() + "\n"; //конкатенация строк в цикле приводит к созданию множества объектов. нужно использовать stringbuilder
         }
         return warriors;
     }

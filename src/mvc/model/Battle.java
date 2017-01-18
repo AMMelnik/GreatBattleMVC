@@ -12,13 +12,13 @@ public class Battle {
     private Warrior warrior1 = null;
     private Warrior warrior2 = null;
 
-    private static volatile Battle instance = new Battle();
+    private static volatile Battle instance = new Battle(); //volatile не нужен, так как вы планируете записывать значение в переменную только 1 раз. а чтобы гарантировать этот 1 раз, нужно добавить final
 
     private Battle() {
     }
 
     public static Battle getInstance() {
-        return instance;
+        return instance; //непонятно, зачем вы вообще решили сделать битву одиночкой. из-за неуместного использования одиночку иногда даже называют антипаттерном.
     }
 
     public void createSquads(String name1, String name2) {
@@ -63,7 +63,7 @@ public class Battle {
                 continue;
             }
             //выбор бойцов для второго раунда
-            warrior1 = squad1.getRandomWarrior();
+            warrior1 = squad1.getRandomWarrior(); //дублирование
             warrior2 = squad2.getRandomWarrior();
             prepareToShowBattleInfo(showRoundAd(warrior2, warrior1));
             warrior1.takeDamage(warrior2.attack());

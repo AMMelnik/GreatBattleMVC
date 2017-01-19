@@ -23,6 +23,10 @@ class Squad {
         return squadName;
     }
 
+    int getSize() {
+        return squad.size();
+    }
+
     // добавление бойцов в отряд
     void addToSquad(String name, int type) {
         Warrior warrior;
@@ -40,6 +44,14 @@ class Squad {
         int randomWarrior = (int) (Math.random() * (squad.size()));
         return squad.get(randomWarrior);
     }
+
+  /* на случай, если произвольные event для Наблюдателя неправильно
+    boolean getWarrior(String name) {
+        if (squad.size() > 0) {
+            return (squad.get(getSize() - 1).getNameOnly().equals(name));
+        }
+        return false;
+    }*/
 
     boolean hasAliveWarriors() {
         return !squad.isEmpty();

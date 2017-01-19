@@ -1,7 +1,7 @@
 package mvc.model;
 
 /**
- * Created by pc on 19.01.2017.
+ * Created by pc on 19.01.2017. Changed on 20.01.17
  */
 class WarriorsFactory {
 

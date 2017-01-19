@@ -85,5 +85,6 @@
             </AnchorPane>
         </items>
       </SplitPane>
+      <Label fx:id="emptySquadsMsg" layoutX="22.0" layoutY="405.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="10.0" />
    </children>
 </AnchorPane>

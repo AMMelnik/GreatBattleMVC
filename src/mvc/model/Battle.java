@@ -1,7 +1,7 @@
 package mvc.model;
 
 /**
- * Created by pc on 11.12.2016.
+ * Created by pc on 11.12.2016. Changed on 20.01.17
  */
 public class Battle {
 
@@ -12,7 +12,7 @@ public class Battle {
     private Warrior warrior1 = null;
     private Warrior warrior2 = null;
 
-    private static volatile Battle instance = new Battle();
+    private static final Battle instance = new Battle();
 
     private Battle() {
     }

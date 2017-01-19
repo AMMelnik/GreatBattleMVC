@@ -5,8 +5,8 @@ package mvc.model;
  */
 class Bomber extends ModernWarrior {
 
-    Bomber(String warriorName, String classType, int warriorDamage, int warriorHealth) {
-        super(warriorName, classType, warriorDamage, warriorHealth);
+    Bomber(String warriorName, int warriorDamage, int warriorHealth) {
+        super(warriorName, warriorDamage, warriorHealth);
     }
 
     @Override

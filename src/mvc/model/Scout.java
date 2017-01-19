@@ -5,8 +5,8 @@ package mvc.model;
  */
 class Scout extends ModernWarrior {
 
-    Scout(String warriorName, String classType, int warriorDamage, int warriorHealth) {
-        super(warriorName, classType, warriorDamage, warriorHealth);
+    Scout(String warriorName, int warriorDamage, int warriorHealth) {
+        super(warriorName, warriorDamage, warriorHealth);
     }
 
     @Override

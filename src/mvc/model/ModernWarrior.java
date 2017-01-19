@@ -11,9 +11,8 @@ abstract class ModernWarrior implements Warrior {
     private String squadName;
     private String classType;
 
-    ModernWarrior(String warriorName, String classType, int warriorDamage, int warriorHealth) {
+    ModernWarrior(String warriorName, int warriorDamage, int warriorHealth) {
         name = warriorName;
-        this.classType = classType;
         damage = warriorDamage;
         health = warriorHealth;
     }

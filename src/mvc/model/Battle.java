@@ -5,8 +5,9 @@ package mvc.model;
  */
 public class Battle {
 
-    private Squad squad1 = new Squad();
-    private Squad squad2 = new Squad();
+    private WarriorsFactory factory = new WarriorsFactory();
+    private Squad squad1 = new Squad(factory);
+    private Squad squad2 = new Squad(factory);
     private StringBuilder battleInfo = new StringBuilder();
     private boolean isBattleEnd = false;
     private Warrior warrior1 = null;

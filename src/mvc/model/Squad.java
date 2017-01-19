@@ -9,6 +9,11 @@ class Squad {
 
     private String squadName;
     private ArrayList<Warrior> squad = new ArrayList<>();
+    private WarriorsFactory factory;
+
+    Squad(WarriorsFactory factory) {
+        this.factory = factory;
+    }
 
     void setSquadName(String name) {
         squadName = name;
@@ -20,17 +25,9 @@ class Squad {
 
     // добавление бойцов в отряд
     void addToSquad(String name, int type) {
-        switch (type) {
-            case 0:
-                squad.add(new Scout(name, "Разведчик", 80, 60));
-                break;
-            case 1:
-                squad.add(new Fighter(name, "Борец", 50, 150));
-                break;
-            case 2:
-                squad.add(new Bomber(name, "Подрывник", 100, 50));
-                break;
-        }
+        Warrior warrior;
+        warrior = factory.createWarrior(name, type);
+        squad.add(warrior);
     }
 
     void setSquadNameForWarriors() {
@@ -59,10 +56,10 @@ class Squad {
 
     @Override
     public String toString() {
-        String warriors = "Состав отряда:\n";
-        for (int i = 0; i < squad.size(); i++){
-            warriors += squad.get(i).toString() + "\n";
+        StringBuilder warriors = new StringBuilder("Состав отряда:\n");
+        for (int i = 0; i < squad.size(); i++) {
+            warriors.append(squad.get(i).toString() + "\n");
         }
-        return warriors;
+        return warriors.toString();
     }
 }

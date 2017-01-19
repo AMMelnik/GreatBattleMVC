@@ -48,6 +48,11 @@ abstract class ModernWarrior implements Warrior {
         return squadName;
     }
 
+    @Override
+    public String toString() {
+        return getNameOnly() + "." + getClassType();
+    }
+
     public abstract String getClassType();
 
     @Override

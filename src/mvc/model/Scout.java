@@ -15,11 +15,6 @@ class Scout extends ModernWarrior {
     }
 
     @Override
-    public String toString() {
-        return super.getNameOnly() + "." + getClassType();
-    }
-
-    @Override
     public Scout clone() throws CloneNotSupportedException {
         return (Scout) super.clone();
     }

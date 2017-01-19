@@ -15,11 +15,6 @@ class Bomber extends ModernWarrior {
     }
 
     @Override
-    public String toString() {
-        return super.getNameOnly() + "." + getClassType();
-    }
-
-    @Override
     public Bomber clone() throws CloneNotSupportedException {
         return (Bomber) super.clone();
     }

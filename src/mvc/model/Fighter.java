@@ -15,11 +15,6 @@ class Fighter extends ModernWarrior {
     }
 
     @Override
-    public String toString() {
-        return super.getNameOnly() + "." + getClassType();
-    }
-
-    @Override
     public Fighter clone() throws CloneNotSupportedException {
         return (Fighter) super.clone();
     }
